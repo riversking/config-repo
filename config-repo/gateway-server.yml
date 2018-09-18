@@ -1,0 +1,54 @@
+spring:
+  redis:
+    database: 1
+    host: ${REDIS_HOST:redis-public}
+    port: ${REDIS_PORT:6379}
+    jedis:
+      pool:
+        max-active: 20
+  rabbitmq:
+    host: ${RABBIT_MQ_HOST:rabbitmq3}
+    port: ${RABBIT_MQ_PORT:5672}
+    username: admin
+    password: admin
+  cloud:
+    gateway:
+      routes:
+      - id: cd-infrastructure
+        uri: lb://cd-infrastructure
+        order: 10000
+        predicates:
+        - Path=/message/**
+        filters:
+        - StripPrefix=0
+
+gate:
+  ignore:
+    startWith: /static,/auth/jwt
+
+#请求和响应GZIP压缩支持
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+  compression:
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
+    response:
+      enabled: true
+
+logging:
+  level:
+    com.clouddeer.gateway: info
+
+#auth:
+#  serviceId: cd-auth
+#  user:
+#    token-header: Authorization
+#  client:
+#    token-header: x-client-token
+#    id: ace-gate  #不填则默认读取spring.application.name
+#    secret: 123456
