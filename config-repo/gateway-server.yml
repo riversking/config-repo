@@ -44,7 +44,7 @@ logging:
   level:
     com.clouddeer.gateway: info
     
-profile : helleWordDevUpdate
+profile : jjjjjjj
 
 #auth:
 #  serviceId: cd-auth
