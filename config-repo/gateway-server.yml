@@ -1,7 +1,7 @@
 spring:
   redis:
     database: 1
-    host: ${REDIS_HOST:redis-public}
+    host: localhost
     port: ${REDIS_PORT:6379}
     jedis:
       pool:
