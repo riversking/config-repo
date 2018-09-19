@@ -44,7 +44,7 @@ logging:
   level:
     com.clouddeer.gateway: info
     
-profile : ghfghfghfgh
+profile : fhfjfgjfghfgh
 
 #auth:
 #  serviceId: cd-auth
