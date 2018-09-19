@@ -43,6 +43,8 @@ feign:
 logging:
   level:
     com.clouddeer.gateway: info
+    
+profile : helleWordDevUpdate
 
 #auth:
 #  serviceId: cd-auth
