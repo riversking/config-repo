@@ -1,1 +1,13 @@
-profile : ertettertty
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: cd-account
+        uri: lb://cd-account
+        predicates:
+        - Path=/api/v1/**
+        filters:
+        - StripPrefix=2
+logging:
+  level:
+    com.clouddeer.gateway: info        
