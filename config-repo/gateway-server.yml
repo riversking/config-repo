@@ -8,6 +8,20 @@ spring:
         - Path=/api/v1/**
         filters:
         - StripPrefix=2
+#请求和响应GZIP压缩支持
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+  compression:
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
+    response:
+      enabled: true
+      
 logging:
   level:
     com.clouddeer.gateway: info        
