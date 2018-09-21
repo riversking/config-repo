@@ -5,7 +5,7 @@ spring:
       - id: cd-account
         uri: lb://cd-account
         predicates:
-        - Path=/api/v1/**
+        - Path=/api/v2/**
         filters:
         - StripPrefix=2
 #请求和响应GZIP压缩支持
