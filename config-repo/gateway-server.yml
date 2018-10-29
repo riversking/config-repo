@@ -21,7 +21,3 @@ feign:
       min-request-size: 2048
     response:
       enabled: true
-      
-logging:
-  level:
-    com.rivers.gateway: info        
