@@ -24,4 +24,4 @@ feign:
       
 logging:
   level:
-    com.clouddeer.gateway: info        
+    com.rivers.gateway: info        
